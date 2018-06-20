@@ -7,5 +7,17 @@
 </ion-header>
 
 <ion-content padding>
+  <ion-item>
+    <ion-label>Favores</ion-label>
+      <ion-select #C (ionChange)="onChange(C.value)" submitText="Okay" cancelText="Nah">
+        <ion-option value="nes">NES</ion-option>
+        <ion-option value="snes">SNES</ion-option>
+        <ion-option value="ness">NESS</ion-option>
+      </ion-select>
+  </ion-item>
 
+  <div #parent>
+
+  </div>
+ 
 </ion-content>

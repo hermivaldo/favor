@@ -10,6 +10,12 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { LoginPage } from '../pages/login/login';
+import { SelectPerfilPage } from '../pages/select-perfil/select-perfil';
+import { DetailModalPage } from '../pages/detail-modal/detail-modal';
+import { FormOptSimplesPage } from '../pages/form-opt-simples/form-opt-simples';
+import { FormOptComplePage } from '../pages/form-opt-comple/form-opt-comple';
+import { TutorialSlidesPage } from '../pages/tutorial-slides/tutorial-slides';
 
 @NgModule({
   declarations: [
@@ -17,7 +23,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    LoginPage,
+    SelectPerfilPage,
+    DetailModalPage,
+    FormOptSimplesPage,
+    FormOptComplePage,
+    TutorialSlidesPage
   ],
   imports: [
     BrowserModule,
@@ -29,7 +41,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    LoginPage,
+    SelectPerfilPage,
+    DetailModalPage,
+    FormOptSimplesPage,
+    FormOptComplePage,
+    TutorialSlidesPage
   ],
   providers: [
     StatusBar,

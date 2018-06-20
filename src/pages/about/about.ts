@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, ViewContainerRef, ViewChild, ComponentFactoryResolver } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { FormOptSimplesPage } from '../form-opt-simples/form-opt-simples';
+import { FormOptComplePage } from '../form-opt-comple/form-opt-comple';
 
 @Component({
   selector: 'page-about',
@@ -7,8 +9,32 @@ import { NavController } from 'ionic-angular';
 })
 export class AboutPage {
 
-  constructor(public navCtrl: NavController) {
 
+  @ViewChild("parent", {read: ViewContainerRef}) parent: ViewContainerRef
+
+  childSimples: any;
+  childComple: any;
+
+  childSelected: any;
+
+  constructor(public navCtrl: NavController, private componentFacotory: ComponentFactoryResolver) {
+      this.childSimples = this.componentFacotory.resolveComponentFactory(FormOptSimplesPage)
+      this.childComple = this.componentFacotory.resolveComponentFactory(FormOptComplePage)
   }
 
+  onChange(value){
+      // remover para não deixar acumular um item sobre o outro.  
+      this.parent.remove(0)
+      switch(value){
+          case 'nes':
+            
+            this.parent.createComponent(this.childSimples)
+            break;
+
+          case 'snes':
+            this.parent.createComponent(this.childComple)
+            break;
+      }
+      
+  }
 }
