@@ -30,7 +30,7 @@ export class LoginPage {
   }
 
   login(){
-    this.appCrtl.getRootNav().push(this.tutorialPage)
+    this.appCrtl.getRootNav().push('TutorialSlidesPage')
   }
 
 }

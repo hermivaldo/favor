@@ -15,7 +15,6 @@ import { SelectPerfilPage } from '../pages/select-perfil/select-perfil';
 import { DetailModalPage } from '../pages/detail-modal/detail-modal';
 import { FormOptSimplesPage } from '../pages/form-opt-simples/form-opt-simples';
 import { FormOptComplePage } from '../pages/form-opt-comple/form-opt-comple';
-import { TutorialSlidesPage } from '../pages/tutorial-slides/tutorial-slides';
 
 @NgModule({
   declarations: [
@@ -28,8 +27,7 @@ import { TutorialSlidesPage } from '../pages/tutorial-slides/tutorial-slides';
     SelectPerfilPage,
     DetailModalPage,
     FormOptSimplesPage,
-    FormOptComplePage,
-    TutorialSlidesPage
+    FormOptComplePage
   ],
   imports: [
     BrowserModule,
@@ -46,8 +44,7 @@ import { TutorialSlidesPage } from '../pages/tutorial-slides/tutorial-slides';
     SelectPerfilPage,
     DetailModalPage,
     FormOptSimplesPage,
-    FormOptComplePage,
-    TutorialSlidesPage
+    FormOptComplePage
   ],
   providers: [
     StatusBar,
