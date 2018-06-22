@@ -19,7 +19,6 @@ export class FormOptComplePage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad FormOptComplePage');
   }
 
 }

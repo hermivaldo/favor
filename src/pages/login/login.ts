@@ -3,13 +3,7 @@ import { IonicPage, NavController, NavParams, App, ViewController } from 'ionic-
 import { TabsPage } from '../tabs/tabs';
 import { SelectPerfilPage } from '../select-perfil/select-perfil';
 import { TutorialSlidesPage } from '../tutorial-slides/tutorial-slides';
-
-/**
- * Generated class for the LoginPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { UsuarioServiceProvider } from '../../providers/usuario-service/usuario-service';
 
 @IonicPage()
 @Component({
@@ -22,11 +16,11 @@ export class LoginPage {
   tutorialPage = TutorialSlidesPage
   
   constructor(public navCtrl: NavController, public navParams: NavParams, 
-    public appCrtl: App, public viewCrtl: ViewController) {
+    public appCrtl: App, public viewCrtl: ViewController, public userService: UsuarioServiceProvider) {
+      
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
   }
 
   login(){

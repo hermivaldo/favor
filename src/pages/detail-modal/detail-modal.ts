@@ -20,7 +20,6 @@ export class DetailModalPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad DetailModalPage');
   }
 
   dismiss(){

@@ -23,7 +23,6 @@ export class AboutPage {
   }
 
   onChange(value){
-      // remover para não deixar acumular um item sobre o outro.  
       this.parent.remove(0)
       switch(value){
           case 'nes':

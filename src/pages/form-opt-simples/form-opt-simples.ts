@@ -19,7 +19,6 @@ export class FormOptSimplesPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad FormOptSimplesPage');
   }
 
 }

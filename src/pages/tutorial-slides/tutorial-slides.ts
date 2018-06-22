@@ -23,24 +23,23 @@ export class TutorialSlidesPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad TutorialSlidesPage');
   }
 
   slides = [
     {
       title: "Bem vindo ao Me Faça um Favor!",
       description: "Esse é um pequeno <b>paço a paço</b> de como o aplicativo funciona.",
-      image: "assets/img/ica-slidebox-img-1.png",
+      image: "assets/imgs/st1.jpg",
     },
     {
       title: "O que é o Me Faça um Favor?",
       description: "<b>Me Faça um Favor</b> é um aplicativo no qual voce pode pedir ou fazer um favor para alguém, tudo depende do perfil escolhido.",
-      image: "assets/img/ica-slidebox-img-2.png",
+      image: "assets/imgs/st1.jpg",
     },
     {
       title: "Posso ganhar dinheiro com isso?",
       description: "O <b>Me Faça um Favor</b> é um aplicativo aberto no qual <b> os valores e preços são colocados por quem precisa do favor</b>, então tudo depende do que voce pretende fazer dentro da plataforma.",
-      image: "assets/img/ica-slidebox-img-3.png",
+      image: "assets/imgs/st1.jpg",
     }
   ];
 

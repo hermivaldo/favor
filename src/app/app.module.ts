@@ -15,6 +15,10 @@ import { SelectPerfilPage } from '../pages/select-perfil/select-perfil';
 import { DetailModalPage } from '../pages/detail-modal/detail-modal';
 import { FormOptSimplesPage } from '../pages/form-opt-simples/form-opt-simples';
 import { FormOptComplePage } from '../pages/form-opt-comple/form-opt-comple';
+import { AngularFireModule } from 'angularfire2';
+import { FIREBASE_CONFIG } from './firebase.credentials';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { UsuarioServiceProvider } from '../providers/usuario-service/usuario-service';
 
 @NgModule({
   declarations: [
@@ -31,7 +35,9 @@ import { FormOptComplePage } from '../pages/form-opt-comple/form-opt-comple';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(FIREBASE_CONFIG),
+    AngularFireDatabaseModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -49,7 +55,8 @@ import { FormOptComplePage } from '../pages/form-opt-comple/form-opt-comple';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    UsuarioServiceProvider
   ]
 })
 export class AppModule {}

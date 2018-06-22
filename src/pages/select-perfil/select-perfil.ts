@@ -21,7 +21,6 @@ export class SelectPerfilPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad SelectPerfilPage');
   }
 
 }
