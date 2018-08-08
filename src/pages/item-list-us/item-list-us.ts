@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { ListUs } from '../../model/list-us-model';
 import { DetailModalPage } from '../detail-modal/detail-modal';
+import { FavorUS } from '../../model/item-list-us-model';
 
 /**
  * Generated class for the ItemListUsPage page.
@@ -22,8 +23,8 @@ export class ItemListUsPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController) {
   }
 
-  presentModal(){
-    const modal = this.modalCtrl.create(DetailModalPage)
+  presentModal(favor: FavorUS){
+    const modal = this.modalCtrl.create(DetailModalPage, {"favor" : favor});
     modal.present()
 }
 

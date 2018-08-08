@@ -18,10 +18,10 @@
 
   <ion-item>
     <ion-avatar item-start>
-        <img src="assets/imgs/av1.png" />
+        <img [src]="favor.imagem" />
     </ion-avatar>
-    <h2>Hermivaldo Braga</h2>
-    <p>13 de maio de 1994</p>
+    <h2>{{favor.usuario.nome}}</h2>
+    <p>{{favor.usuario.dataN}}</p>
 
     <button ion-button icon-start  left clear item-end>
       <ion-icon name="thumbs-up"></ion-icon>
@@ -30,12 +30,13 @@
 
   </ion-item>
   <ion-row aling-items-center justify-content-center>
-      <img src="assets/imgs/av1.png"  height="200px" />
+      <img [src]="favor.usuario.foto"  height="200px" />
   
   </ion-row>
   
   <ion-card-content>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ultricies tempus nunc. Morbi ullamcorper auctor feugiat. Cras placerat velit eget hendrerit bibendum. In a commodo magna. Etiam pharetra laoreet ex, vel lobortis arcu faucibus eu. Nunc nibh eros, fermentum et tellus nec, auctor gravida lorem. Donec interdum nunc ut tortor faucibus tempus.
+    <p>
+      {{favor.descricao}}
     </p>
   </ion-card-content>
 

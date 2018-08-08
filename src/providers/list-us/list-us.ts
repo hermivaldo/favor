@@ -1,7 +1,7 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ListUs } from '../../model/list-us-model';
 import { FavorUS } from '../../model/item-list-us-model';
+import { UsuarioS } from '../../model/usuarioS.model';
 
 /*
   Generated class for the ListUsProvider provider.
@@ -24,7 +24,11 @@ export class ListUsProvider {
     arraylistFavor.push(favor);
     list.titulo = "Abertos";
     list.listFavor = arraylistFavor;
-
+    var user2 = new UsuarioS();
+    user2.nome = "Maria aparecida da graça";
+    user2.dataN = "16/11/1995";
+    user2.foto = "assets/imgs/av2.png";
+    favor.usuario = user2;
     menuList.push(list);
 
     var list2 = new ListUs();
@@ -36,7 +40,12 @@ export class ListUsProvider {
     arraylistFavor2.push(favor2);
     list2.titulo = "Fechado";
     list2.listFavor = arraylistFavor2;
-
+    var user = new UsuarioS();
+    user.nome = "Hermivaldo Braga Oliveira Junior";
+    user.dataN = "13/05/1994";
+    user.foto = "assets/imgs/av1.png";
+    favor2.usuario = user;
+    
     menuList.push(list2);
 
     return menuList;

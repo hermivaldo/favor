@@ -2,7 +2,7 @@
 <ion-item-divider>
   {{favores.titulo}}
 </ion-item-divider>
-  <button ion-item (click)="presentModal()" *ngFor="let favor of favores.listFavor">
+  <button ion-item (click)="presentModal(favor)" *ngFor="let favor of favores.listFavor">
       <ion-thumbnail item-start>
           <img [src]="favor.imagem" />
       </ion-thumbnail>

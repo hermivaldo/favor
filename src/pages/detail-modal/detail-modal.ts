@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
+import { FavorUS } from '../../model/item-list-us-model';
 
 /**
  * Generated class for the DetailModalPage page.
@@ -15,8 +16,10 @@ import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angul
 })
 export class DetailModalPage {
 
+  favor: FavorUS;
   constructor(public navCtrl: NavController, public navParams: NavParams,
   public viewCtrl: ViewController) {
+    this.favor = navParams.get("favor");
   }
 
   ionViewDidLoad() {
