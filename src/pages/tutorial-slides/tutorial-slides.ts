@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, App } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { IonicPage, NavController, NavParams, App, Slides } from 'ionic-angular';
 import { SelectPerfilPage } from '../select-perfil/select-perfil';
 
 /**
@@ -17,6 +17,7 @@ import { SelectPerfilPage } from '../select-perfil/select-perfil';
 export class TutorialSlidesPage {
 
   selctPerfil = SelectPerfilPage
+  @ViewChild('slide') slide: Slides;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public appCrtl: App) {
@@ -24,6 +25,7 @@ export class TutorialSlidesPage {
 
   ionViewDidLoad() {
   }
+  
 
   slides = [
     {
@@ -47,4 +49,7 @@ export class TutorialSlidesPage {
     this.appCrtl.getRootNav().push(this.selctPerfil)
   }
 
+  next() {
+    this.slide.slideNext();
+  }
 }

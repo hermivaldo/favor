@@ -2,12 +2,6 @@ import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Usuario } from '../../model/usuario.model';
 
-/*
-  Generated class for the UsuarioServiceProvider provider.
-
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
 @Injectable()
 export class UsuarioServiceProvider {
 

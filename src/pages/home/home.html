@@ -6,62 +6,6 @@
 
 <ion-content padding>
   <ion-list>
-    <ion-item-group>
-      <ion-item-divider>
-        Abertos
-      </ion-item-divider>
-        <button ion-item (click)="presentModal()">
-            <ion-thumbnail item-start>
-                <img src="assets/imgs/av2.png" />
-            </ion-thumbnail>
-            <h2>Meu vizinho totoro</h2>
-            <h2>Melhor filme para mim</h2>
-            <button ion-button icon-start  left clear item-end>
-                <ion-icon name="thumbs-up"></ion-icon>
-            </button>
-        </button>
-        <button ion-item (click)="presentModal()">
-            <ion-thumbnail item-start>
-                <img src="assets/imgs/av1.png" />
-            </ion-thumbnail>
-            <h2>Tumulo dos vagalumes</h2>
-            <h2>Esse todo mundo chora</h2>
-            <button ion-button icon-start  left clear item-end>
-                <ion-icon name="thumbs-up"></ion-icon>
-            </button>
-        </button>
-    </ion-item-group>
-
-    <ion-item-group>
-        <ion-item-divider>
-          Aguardando
-        </ion-item-divider>
-          <button ion-item (click)="presentModal()">
-              <ion-thumbnail item-start>
-                  <img src="assets/imgs/av1.png" />
-              </ion-thumbnail>
-              <h2>Meu vizinho totoro 2</h2>
-              <h2>Pena que ainda não existe.</h2>
-              <button ion-button icon-start  left clear item-end>
-                <ion-icon name="warning"></ion-icon>
-              </button>
-          </button>
-      </ion-item-group>
-
-      <ion-item-group>
-          <ion-item-divider>
-            Fechados
-          </ion-item-divider>
-            <button ion-item (click)="presentModal()">
-                <ion-thumbnail item-start>
-                    <img src="assets/imgs/av2.png" />
-                </ion-thumbnail>
-                <h2>Toy Story</h2>
-                <h2>Quero mais um filme</h2>
-                <button ion-button icon-start  left clear item-end>
-                    <ion-icon name="checkmark-circle-outline"></ion-icon>
-                </button>
-            </button>
-        </ion-item-group>
+    <item-list-us [favores]="favores"></item-list-us>
   </ion-list>
 </ion-content>

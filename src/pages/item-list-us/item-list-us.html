@@ -1,0 +1,15 @@
+<ion-item-group *ngFor="let favores of favorList">
+<ion-item-divider>
+  {{favores.titulo}}
+</ion-item-divider>
+  <button ion-item (click)="presentModal()" *ngFor="let favor of favores.listFavor">
+      <ion-thumbnail item-start>
+          <img [src]="favor.imagem" />
+      </ion-thumbnail>
+      <h2>{{favor.titulo}}</h2>
+      <h2>{{favor.descricao}}</h2>
+      <button ion-button icon-start  left clear item-end>
+          <ion-icon name="checkmark-circle-outline"></ion-icon>
+      </button>
+  </button>
+</ion-item-group>

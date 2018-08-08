@@ -19,6 +19,9 @@ import { AngularFireModule } from 'angularfire2';
 import { FIREBASE_CONFIG } from './firebase.credentials';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { UsuarioServiceProvider } from '../providers/usuario-service/usuario-service';
+import { ItemListUsPage } from '../pages/item-list-us/item-list-us';
+import { ListUsProvider } from '../providers/list-us/list-us';
+
 
 @NgModule({
   declarations: [
@@ -31,7 +34,8 @@ import { UsuarioServiceProvider } from '../providers/usuario-service/usuario-ser
     SelectPerfilPage,
     DetailModalPage,
     FormOptSimplesPage,
-    FormOptComplePage
+    FormOptComplePage,
+    ItemListUsPage
   ],
   imports: [
     BrowserModule,
@@ -50,13 +54,16 @@ import { UsuarioServiceProvider } from '../providers/usuario-service/usuario-ser
     SelectPerfilPage,
     DetailModalPage,
     FormOptSimplesPage,
-    FormOptComplePage
+    FormOptComplePage,
+    ItemListUsPage
+    
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    UsuarioServiceProvider
+    UsuarioServiceProvider,
+    ListUsProvider
   ]
 })
 export class AppModule {}
