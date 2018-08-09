@@ -1,4 +1,5 @@
 import { UsuarioS } from "./usuarioS.model";
+import { Chat } from "./chat-model";
 
 export class FavorUS {
     imagem: string;
@@ -6,4 +7,5 @@ export class FavorUS {
     descricao: string;
     tipo: number;
     usuario: UsuarioS;
+    chat: Chat;
 }

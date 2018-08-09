@@ -42,46 +42,29 @@
 
   <ion-card height="150px">
     <ion-card-header>
-      Chat
+
+        <ion-item-divider>
+            Entrar em Contato 
+            <button ion-button item-end tabBadge="3">
+              <ion-icon name="chatbubbles"></ion-icon>
+              <ion-badge>5</ion-badge>
+            </button>
+            
+          </ion-item-divider>
+    
+      
     </ion-card-header>
 
     <ion-list>
-        <button ion-item>
-            <ion-icon name="text"></ion-icon>
-            <div>
-              Uma mensagem qualquer
-            </div>
+
+        <button ion-item >
+            
+            <h2> Última Mensagem</h2>
+            <h3> {{favor.chat.hora}}</h3>
+            <p> {{ favor.chat.ultimaM }}</p>
           </button>
-          <button ion-item>
-              <ion-icon name="text"></ion-icon>
-              <div>
-                Uma mensagem qualquer
-              </div>
-            </button>
-            <button ion-item>
-                <ion-icon name="text"></ion-icon>
-                <div>
-                  Uma mensagem qualquer
-                </div>
-              </button>
-              <button ion-item>
-                  <ion-icon name="text"></ion-icon>
-                  <div>
-                    Uma mensagem qualquer
-                  </div>
-                </button>
-                <button ion-item>
-                    <ion-icon name="text"></ion-icon>
-                    <div>
-                      Uma mensagem qualquer
-                    </div>
-                  </button>
-                  <button ion-item>
-                      <ion-icon name="text"></ion-icon>
-                      <div>
-                        Uma mensagem qualquer
-                      </div>
-                    </button>
+     
+        
     </ion-list>
     
   </ion-card>
