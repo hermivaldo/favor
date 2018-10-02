@@ -8,4 +8,5 @@ export class FavorUS {
     tipo: number;
     usuario: UsuarioS;
     chat: Chat;
+    preco: number;
 }

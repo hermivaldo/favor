@@ -29,15 +29,22 @@
     </button>
 
   </ion-item>
-  <ion-row aling-items-center justify-content-center>
-      <img [src]="favor.usuario.foto"  height="200px" />
-  
+  <ion-row aling-items-center justify-content-center style="height: 200px;">
+      
+      <img [src]="favor.usuario.foto" height="200px" />
+      <ion-fab style="top: 250px; right: 29px;">
+          <button ion-fab large>
+            {{favor.preco  | currency:"BRL":true:"1.2"}}
+          </button>
+        </ion-fab>
   </ion-row>
   
   <ion-card-content>
+   
     <p>
       {{favor.descricao}}
     </p>
+    
   </ion-card-content>
 
   <ion-card height="150px">
@@ -60,7 +67,7 @@
         <button ion-item >
             
             <h2> Última Mensagem</h2>
-            <h3> {{favor.chat.hora}}</h3>
+            <h3> {{ favor.chat.hora }}</h3>
             <p> {{ favor.chat.ultimaM }}</p>
           </button>
      
@@ -71,36 +78,26 @@
   
 </ion-content>
 
-<ion-footer>
+<ion-footer *ngIf="favor.tipo == 1">
     <ion-card>
-    
-      <ion-row col-12>
-        <ion-col>
-          <button ion-button clear>
-            <ion-icon name="text"></ion-icon>
-          </button>
-        </ion-col>
-        <ion-col>
-            <button ion-button clear>
-              <ion-icon name="text"></ion-icon>
-            </button>
-          </ion-col>
-          <ion-col>
-              <button ion-button clear>
-                <ion-icon name="text"></ion-icon>
-              </button>
-            </ion-col>
-            <ion-col>
-                <button ion-button clear>
-                  <ion-icon name="text"></ion-icon>
-                </button>
-              </ion-col>
-              <ion-col>
-                  <button ion-button clear>
-                    <ion-icon name="text"></ion-icon>
-                  </button>
-                </ion-col>
-      </ion-row>
-        
+        <button style="width: 48%;" ion-button icon-start>
+          <ion-icon name="close-circle"></ion-icon>
+        </button>
+       
+        <button style="width: 48%;" ion-button outline icon-start>
+          <ion-icon name="ios-construct"></ion-icon>
+        </button>
     </ion-card>
+</ion-footer>
+
+<ion-footer *ngIf="favor.tipo == 3">
+  <ion-card>
+      <button style="width: 48%;" ion-button icon-start>
+        <ion-icon name="close-circle"></ion-icon>
+      </button>
+     
+      <button style="width: 48%;" ion-button outline icon-start>
+        <ion-icon name="ios-warning"></ion-icon>
+      </button>
+  </ion-card>
 </ion-footer>
