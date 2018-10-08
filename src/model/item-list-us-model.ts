@@ -5,6 +5,7 @@ export class FavorUS {
     imagem: string;
     titulo: string;
     descricao: string;
+    dataCriacao: string;
     tipo: number;
     usuario: UsuarioS;
     chat: Chat;

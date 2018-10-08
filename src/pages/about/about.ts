@@ -10,30 +10,30 @@ import { FormOptComplePage } from '../form-opt-comple/form-opt-comple';
 export class AboutPage {
 
 
-  @ViewChild("parent", {read: ViewContainerRef}) parent: ViewContainerRef
-
+  //@ViewChild("parent", {read: ViewContainerRef}) parent: ViewContainerRef
+  todo = {}
   childSimples: any;
   childComple: any;
 
   childSelected: any;
 
-  constructor(public navCtrl: NavController, private componentFacotory: ComponentFactoryResolver) {
-      this.childSimples = this.componentFacotory.resolveComponentFactory(FormOptSimplesPage)
-      this.childComple = this.componentFacotory.resolveComponentFactory(FormOptComplePage)
-  }
+  // constructor(public navCtrl: NavController, private componentFacotory: ComponentFactoryResolver) {
+  //     this.childSimples = this.componentFacotory.resolveComponentFactory(FormOptSimplesPage)
+  //     this.childComple = this.componentFacotory.resolveComponentFactory(FormOptComplePage)
+  // }
 
-  onChange(value){
-      this.parent.remove(0)
-      switch(value){
-          case 'nes':
+  // onChange(value){
+  //     this.parent.remove(0)
+  //     switch(value){
+  //         case 'nes':
             
-            this.parent.createComponent(this.childSimples)
-            break;
+  //           this.parent.createComponent(this.childSimples)
+  //           break;
 
-          case 'snes':
-            this.parent.createComponent(this.childComple)
-            break;
-      }
+  //         case 'snes':
+  //           this.parent.createComponent(this.childComple)
+  //           break;
+  //     }
       
-  }
+  // }
 }

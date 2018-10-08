@@ -1,12 +1,35 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      About
+      Novo Favor
     </ion-title>
   </ion-navbar>
 </ion-header>
-
 <ion-content padding>
+<ion-card>
+  <img src="assets/imgs/av1.png" style="margin-top: 3%; display: block !important; width: 50% !important; margin-left: 25% !important;">
+  <ion-card-content>
+  
+  <ion-card-title>
+    Novo Favor.
+  </ion-card-title>
+  
+  <ion-item>
+    <ion-label>Todo</ion-label>
+    <ion-input type="text" [(ngModel)]="todo.title" name="title"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Description</ion-label>
+    <ion-textarea [(ngModel)]="todo.description" name="description"></ion-textarea>
+  </ion-item>
+  
+  <button ion-button full>Cadastrar</button>
+</ion-card-content>
+
+
+</ion-card>
+<!-- DEIXAR CONTEUDO PARA UMA VERSAO 2.0 NO MOMENTO SIMPLIFICAR INTERFACE 
+  <ion-content padding>
   <ion-item>
     <ion-label>Favores</ion-label>
       <ion-select #C (ionChange)="onChange(C.value)" submitText="Okay" cancelText="Nah">
@@ -18,6 +41,6 @@
 
   <div #parent>
 
-  </div>
+  </div> -->
  
 </ion-content>

@@ -3,7 +3,7 @@ import { ListUs } from '../../model/list-us-model';
 import { FavorUS } from '../../model/item-list-us-model';
 import { UsuarioS } from '../../model/usuarioS.model';
 import { Chat } from '../../model/chat-model';
-
+import { StatusFavor } from '../../model/status-favor';
 /*
   Generated class for the ListUsProvider provider.
 
@@ -21,6 +21,7 @@ export class ListUsProvider {
     favor.titulo = "Meu vizinho totoro 2";
     favor.descricao = "Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.";
     favor.imagem = "assets/imgs/av1.png";
+    favor.dataCriacao = "20/09/2018";
     var arraylistFavor = new Array<FavorUS>();
     arraylistFavor.push(favor);
     list.titulo = "Abertos";
@@ -36,13 +37,14 @@ export class ListUsProvider {
     chat.ultimaM = "Precisamos conversar melhor sobre os componentes necessários para verificar o problema...";
     favor.chat = chat;
     menuList.push(list);
-    favor.tipo = 1;
+    favor.tipo = StatusFavor.ABERTO;
 
     var list2 = new ListUs();
     var favor2 = new FavorUS();
     favor2.titulo = "Tumulo dos vagalumes";
     favor2.descricao = "Esse todo mundo chora";
     favor2.imagem = "assets/imgs/av2.png";
+    favor2.dataCriacao = "20/09/2018";
     var arraylistFavor2 = new Array<FavorUS>();
     arraylistFavor2.push(favor2);
     list2.titulo = "Fechado";
@@ -56,7 +58,7 @@ export class ListUsProvider {
     var chat2 = new Chat();
     chat2.hora = "7/08/2018 as 8:28";
     chat2.ultimaM = "Estamos tentando entrar em contato, porém náo conseguimos falar com o senhor...";
-    favor2.tipo = 2;
+    favor2.tipo = StatusFavor.FECHADO;
     favor2.chat = chat2;
     menuList.push(list2);
     
@@ -65,6 +67,7 @@ export class ListUsProvider {
     favor3.titulo = "Compra de um carrinho de bebe";
     favor3.descricao = "Preciso de um carrinho de bebe";
     favor3.imagem = "assets/imgs/av2.png";
+    favor3.dataCriacao = "20/09/2018";
     favor3.preco = 3.89;
     var arraylistFavor3 = new Array<FavorUS>();
     arraylistFavor3.push(favor3);
@@ -79,7 +82,7 @@ export class ListUsProvider {
     chat3.hora = "17/08/2018 as 8:28";
     chat3.ultimaM = "Estamos tentando entrar em contato...";
     favor3.chat = chat3;
-    favor3.tipo = 3;
+    favor3.tipo = StatusFavor.NEGOCIANDO;
 
     menuList.push(list3);
 
