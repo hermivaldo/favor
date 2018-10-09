@@ -7,21 +7,22 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
-
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
+import { ItemListUsPage } from '../pages/item-list-us/item-list-us';
+import { ListUsProvider } from '../providers/list-us/list-us';
 import { LoginPage } from '../pages/login/login';
 import { SelectPerfilPage } from '../pages/select-perfil/select-perfil';
 import { DetailModalPage } from '../pages/detail-modal/detail-modal';
 import { FormOptSimplesPage } from '../pages/form-opt-simples/form-opt-simples';
 import { FormOptComplePage } from '../pages/form-opt-comple/form-opt-comple';
+import { UsuarioServiceProvider } from '../providers/usuario-service/usuario-service';
+
+
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
 import { AngularFireModule } from 'angularfire2';
 import { FIREBASE_CONFIG } from './firebase.credentials';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { UsuarioServiceProvider } from '../providers/usuario-service/usuario-service';
-import { ItemListUsPage } from '../pages/item-list-us/item-list-us';
-import { ListUsProvider } from '../providers/list-us/list-us';
-
+import { Camera } from '@ionic-native/camera';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { ListUsProvider } from '../providers/list-us/list-us';
   providers: [
     StatusBar,
     SplashScreen,
+    Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     UsuarioServiceProvider,
     ListUsProvider
