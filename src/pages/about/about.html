@@ -7,26 +7,21 @@
 </ion-header>
 <ion-content padding>
 
-  <img (click)="getPhoto('picture')" [src]="currentPhoto" style="margin-top: 3%; display: block !important; width: 30% !important; margin-left: 35% !important;">
+  <img (click)="getPhoto('picture')" [src]="todo.imagem" style="margin-top: 3%; display: block !important; width: 30% !important; margin-left: 35% !important;">
  
-  
-    
       <ion-item>
         <ion-label floating> Título</ion-label>
         <ion-input type="text" [(ngModel)]="todo.titulo" name="title"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label floating>Preço</ion-label>
-        <ion-input type="text" [(ngModel)]="todo.preco" name="title"></ion-input>
+        <ion-input type="text" [(ngModel)]="todo.preco" name="preco"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label floating>Descrição</ion-label>
-        <ion-textarea [(ngModel)]="todo.descricao" name="description"></ion-textarea>
+        <ion-textarea [(ngModel)]="todo.descricao" name="descricao"></ion-textarea>
       </ion-item>
-     
-    
-
-
+ 
 <button ion-button full (click)="logForm()">Cadastrar</button>
 
 <!-- DEIXAR CONTEUDO PARA UMA VERSAO 2.0 NO MOMENTO SIMPLIFICAR INTERFACE 

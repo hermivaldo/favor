@@ -20,9 +20,11 @@ import { UsuarioServiceProvider } from '../providers/usuario-service/usuario-ser
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { FIREBASE_CONFIG } from './firebase.credentials';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { Camera } from '@ionic-native/camera';
+import { FavorUsProvider } from '../providers/favor-us/favor-us';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,8 @@ import { Camera } from '@ionic-native/camera';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(FIREBASE_CONFIG),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    AngularFirestoreModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -65,7 +68,8 @@ import { Camera } from '@ionic-native/camera';
     Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     UsuarioServiceProvider,
-    ListUsProvider
+    ListUsProvider,
+    FavorUsProvider
   ]
 })
 export class AppModule {}

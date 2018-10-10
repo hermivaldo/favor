@@ -3,22 +3,22 @@ import { NavController, NavParams } from 'ionic-angular';
 import { FormOptSimplesPage } from '../form-opt-simples/form-opt-simples';
 import { FormOptComplePage } from '../form-opt-comple/form-opt-comple';
 import { Camera, CameraOptions } from "@ionic-native/camera";
+import { FavorUS } from '../../model/item-list-us-model';
+import { FavorUsProvider } from '../../providers/favor-us/favor-us';
 
 @Component({
   selector: 'page-about',
   templateUrl: 'about.html'
 })
 export class AboutPage {
-  todo = {}
+  todo: FavorUS = new FavorUS();
   
   logForm() {
-    alert(this.currentPhoto);
-    console.log(this.todo)
+    this.favorBD.addFavor(this.todo);
   }
-  currentPhoto = "assets/imgs/av1.png";
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public camera : Camera) {
- 
+  constructor(public navCtrl: NavController, public navParams: NavParams,public camera : Camera, public favorBD: FavorUsProvider) {
+    this.todo.imagem = "assets/imgs/av1.png";
   }
 
   getPhoto(type){
@@ -34,10 +34,10 @@ export class AboutPage {
 
     this.camera.getPicture(options).then((imageData) => {
 
-      this.currentPhoto = 'data:image/jpeg;base64,' + imageData;
+      this.todo.imagem = 'data:image/jpeg;base64,' + imageData;
 
     }, (err) => {
-      // Handle error
+      console.log("falha ao capturar a foto");
     });
   }
 
