@@ -1,6 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, App, Slides } from 'ionic-angular';
 import { SelectPerfilPage } from '../select-perfil/select-perfil';
+import { UsuarioServiceProvider } from '../../providers/usuario-service/usuario-service';
+import { AlertController } from 'ionic-angular';
 
 /**
  * Generated class for the TutorialSlidesPage page.
@@ -20,7 +22,8 @@ export class TutorialSlidesPage {
   @ViewChild('slide') slide: Slides;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-    public appCrtl: App) {
+    public appCrtl: App, public usrDB: UsuarioServiceProvider, 
+    public alertCtrl: AlertController) {
   }
 
   ionViewDidLoad() {
@@ -45,9 +48,41 @@ export class TutorialSlidesPage {
     }
   ];
 
-  continuar(){
-    this.appCrtl.getRootNav().push(this.selctPerfil)
+  continuar(status: boolean){
+
+    var tmpUser = this.usrDB.getUsarioLogado();
+    tmpUser.tutorial = status;
+    var result = this.usrDB.updateNode(tmpUser);
+    result.then(c => this.appCrtl.getRootNav().push(this.selctPerfil))
+    .catch(c => {
+      alert("falha ao se conectar ao servidor " + c);
+      this.appCrtl.getRootNav().push(this.selctPerfil)
+    })
   }
+
+
+  showConfirm() {
+    const confirm = this.alertCtrl.create({
+      title: 'Exibindo tutorial.',
+      message: 'Deseja que o tutorial seja exibido da próxima vez que realizar login?',
+      buttons: [
+        {
+          text: 'não',
+          handler: () => {
+            this.continuar(false);
+          }
+        },
+        {
+          text: 'sim',
+          handler: () => {
+            this.continuar(false);
+          }
+        }
+      ]
+    });
+    confirm.present();
+  }
+
 
   next() {
     this.slide.slideNext();

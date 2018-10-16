@@ -1,5 +1,6 @@
 export class Usuario {
-    id?: string;
+    key: string;
     usuario: string;
     senha: string;
+    tutorial: boolean;
 }

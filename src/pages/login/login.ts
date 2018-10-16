@@ -23,7 +23,7 @@ export class LoginPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, 
     public appCrtl: App, public viewCrtl: ViewController, public userService: UsuarioServiceProvider,
     public loadingCtrl: LoadingController, public alertCtrl: AlertController) {
-      
+    this.usuario.tutorial = true;
   }
 
   ionViewDidLoad() {
@@ -39,9 +39,15 @@ export class LoginPage {
     var result =  this.userService.findUser(this.usuario);
     result.subscribe(result => {
       load.dismiss("normal");
-      if (result){
-
-      }else {
+      if (result.length > 0){
+        var user: Usuario = result[0];
+        this.userService.changeUser(user);
+        if (user.tutorial){
+          this.appCrtl.getRootNav().push('TutorialSlidesPage');
+        }else{
+          this.appCrtl.getRootNav().push(this.selctPerfil)
+        }
+      } else {
         this.showAlert();
       }
     });
@@ -53,6 +59,7 @@ export class LoginPage {
   }
 
   cadastrar(){
+    
     this.userService.addUser(this.usuario);
   }
 
