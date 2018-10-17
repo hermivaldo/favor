@@ -20,6 +20,10 @@ export class HomePage {
     listProvider.getAllItens().then(favores => this.favores = favores);
   }
 
+  ngOnInit() {
+    
+ }
+
   presentModal(){
       const modal = this.modalCtrl.create(DetailModalPage)
       modal.present()

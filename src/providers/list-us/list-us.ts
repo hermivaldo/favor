@@ -41,4 +41,8 @@ export class ListUsProvider {
     return PROMISSE;
   }
 
+
+  deleteFavor(favor: FavorUS){
+    return this.listProvider.deleteFavor(favor.key);
+  }
 }

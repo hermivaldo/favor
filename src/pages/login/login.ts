@@ -60,7 +60,14 @@ export class LoginPage {
 
   cadastrar(){
     
-    this.userService.addUser(this.usuario);
+    this.userService.addUser(this.usuario).then(c => {
+      const alert = this.alertCtrl.create({
+        title: 'SUCESSO',
+        subTitle: 'Castro realizado com sucesso.',
+        buttons: ['OK']
+      });
+      alert.present();
+    });
   }
 
   showAlert() {

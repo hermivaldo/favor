@@ -25,6 +25,12 @@ export class FavorUsProvider {
       )
     );
   }
+
+
+  deleteFavor(key: string){
+    return this.favoresList.remove(key);
+  }
+
   // adicionar um novo favor
   addFavor(favor: FavorUS){
     return this.favoresList.push(favor)

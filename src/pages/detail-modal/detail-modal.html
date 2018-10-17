@@ -31,7 +31,7 @@
   </ion-item>
   <ion-row aling-items-center justify-content-center style="height: 200px;">
       
-      <img [src]="favor.usuario.foto" height="200px" />
+      <img [src]="favor.imagem" height="200px" />
       <ion-fab style="top: 250px; right: 29px;">
           <button ion-fab large>
             {{favor.preco  | currency:"BRL":true:"1.2"}}
@@ -47,7 +47,7 @@
     
   </ion-card-content>
 
-  <ion-card height="150px">
+  <ion-card height="150px" *ngIf="favor.chat">
     <ion-card-header>
 
         <ion-item-divider>
@@ -80,8 +80,8 @@
 
 <ion-footer *ngIf="favor.tipo == 1">
     <ion-card>
-        <button style="width: 48%;" ion-button icon-start>
-          <ion-icon name="close-circle"></ion-icon>
+        <button style="width: 48%;" (click)="excluirChamado()" ion-button icon-start>
+          <ion-icon name="close-circle" ></ion-icon>
         </button>
        
         <button style="width: 48%;" ion-button outline icon-start>

@@ -10,4 +10,5 @@ export class FavorUS {
     usuario: Usuario;
     chat: Chat;
     preco: number;
+    key: string;
 }
